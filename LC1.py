@@ -8,9 +8,8 @@ class Solution:
         dict = {}
         i = 0
         for num in nums:
-            if num not in dict:
-                dict[num] = i
-            if target - num in dict and dict[target - num] != i:
+            if target - num in dict:
                 return [dict[target - num], i]
+            dict[num] = i
             i += 1
         raise ValueError("Illegal param")
