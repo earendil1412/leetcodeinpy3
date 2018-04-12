@@ -12,12 +12,10 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        addition = 0
+        carrying = 0
         result = ListNode(0)
         temp = result
         while l1 is not None or l2 is not None:
-            if temp is None:
-                temp = ListNode(0)
             x = 0
             y = 0
             if l1 is not None:
@@ -26,13 +24,14 @@ class Solution:
             if l2 is not None:
                 y = l2.val
                 l2 = l2.next
-            num = x + y + addition
+            num = x + y + carrying
             if num >= 10:
-                addition = 1
+                carrying = 1
+                num = num - 10
             else:
-                addition = 0
-            temp.next = ListNode(num % 10)
+                carrying = 0
+            temp.next = ListNode(num)
             temp = temp.next
-        if addition > 0:
-            temp.next = ListNode(addition)
+        if carrying > 0:
+            temp.next = ListNode(carrying)
         return result.next
