@@ -15,7 +15,7 @@ class Solution:
             if j < numRows:
                 result_arr[j] += s[i]
             else:
-                result_arr[numRows * 2 - j - 2] += s[i]
+                result_arr[circle - j] += s[i]
             i += 1
         result = ""
         for item in result_arr:
