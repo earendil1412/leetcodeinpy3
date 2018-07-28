@@ -47,8 +47,3 @@ def __add_dot__(S):
             result.append(S[:index] + "." + S[index:])
             index = index + 1
     return result
-
-
-solution = Solution()
-print(solution.ambiguousCoordinates("(0123)"))
-# print(len(123))
